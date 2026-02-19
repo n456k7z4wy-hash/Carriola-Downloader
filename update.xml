@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>13.0.0.0</version>
+    <version>14.0.0.0</version>
     <url>LINK_DO_SEU_INSTALADOR_FINAL.exe</url>
     <changelog>https://github.com/SEU_USUARIO/SEU_REPO/releases</changelog>
     <mandatory>false</mandatory>
