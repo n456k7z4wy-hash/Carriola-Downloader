@@ -1,84 +1,69 @@
-📥 Carriola Vídeos Downloader 6.2 Downloader moderno para YouTube,
-Instagram e X (Twitter) — com UI profissional, histórico avançado e
-suporte a playlists.
+# Carriola Vídeos Downloader
 
-------------------------------------------------------------------------
+Aplicativo desktop para baixar vídeos e áudios do YouTube, Instagram e X,
+com interface escura e organização dos downloads.
 
-📌 Sobre o Projeto O Carriola Vídeos Downloader 6.1 é um aplicativo
-desktop desenvolvido em Python + CustomTkinter, criado para facilitar o
-download de vídeos e áudios das principais plataformas: YouTube,
-Instagram e X (Twitter). Ele oferece uma experiência completa com
-detecção de playlists, progresso detalhado, miniaturas, histórico
-organizado e muito mais.
+**Versão publicada:** [15.2 — baixar o instalador para Windows](https://github.com/n456k7z4wy-hash/Carriola-Downloader/releases/tag/v15.2).
 
-------------------------------------------------------------------------
+**Código desta branch:** `16.0.0.dev1`, uma versão de desenvolvimento baseada
+no Python 6.2 recuperado do histórico. O código-fonte da versão 15.2 não está
+disponível neste repositório. Veja a [origem e os limites desta versão](docs/DEVELOPMENT.md).
 
-✨ Funcionalidades Principais
+## O que esta versão de desenvolvimento oferece
 
-🎥 Download de Vídeo - Suporte total a YouTube, Instagram e X. - Melhor
-qualidade automática (até 4K). - Botão muda de cor conforme a
-plataforma. - Suporte avançado a playlists (pergunta se quer baixar
-playlist inteira ou só o vídeo). - Merge automático com FFmpeg.
+- Fila de downloads: adicione vários links, cancele cada item e tente novamente.
+- Vídeos em MP4 ou MKV, com áudio, na melhor resolução disponível ou com limite
+  de 4K, 1440p, 1080p, 720p ou 480p. Vídeos verticais e ultrawide são considerados.
+- Extração de áudio MP3 (320 kbps), M4A ou WAV, com metadados. MP3/M4A podem incluir
+  capa quando ela estiver disponível; WAV não inclui capa.
+- Playlists do YouTube, progresso por item e indicação de resultados parciais.
+- Histórico persistente com busca, miniaturas e acesso aos arquivos e pastas.
+- Retomada de arquivos parciais quando suportada, identificação de arquivos por ID
+  e qualidade, e nomes com acentos/emojis tratados para o Windows.
+- Preferências persistentes, modo compacto, logs rotativos e notificações do Windows.
 
-🎵 Download de Áudio - Formatos: MP3, WAV e M4A. - Metadados completos e
-capa incorporada. - Suporte a playlists.
+## Executar a versão de desenvolvimento
 
-🖼️ Histórico Inteligente - Miniaturas carregadas de forma assíncrona. -
-Cache inteligente. - Botões: Abrir arquivo, Abrir pasta, Abrir pasta da
-playlist. - Busca instantânea. - Limpar histórico com um clique.
+1. Instale [Python 3.11 ou superior](https://www.python.org/downloads/windows/).
+2. Instale [FFmpeg e FFprobe](https://ffmpeg.org/download.html) na mesma pasta,
+   por exemplo `C:\ffmpeg\bin`, e adicione-a ao PATH ou selecione o FFmpeg em Preferências.
+3. Para o YouTube, instale também o [Deno](https://docs.deno.com/runtime/getting_started/installation/)
+   e deixe `deno.exe` no PATH.
+4. Baixe ou clone **esta branch**, extraia a pasta e execute `instalar.bat`.
+5. Nas próximas vezes, use `iniciar.bat`.
 
-📊 Indicadores de Progresso - Percentual, tamanho total, velocidade,
-ETA. - Indicação do vídeo atual dentro da playlist.
+Alternativa pelo terminal, na pasta do projeto:
 
-------------------------------------------------------------------------
+```powershell
+py -3 -m venv .venv
+.venv\Scripts\python.exe -m pip install -e .
+.venv\Scripts\python.exe -m carriola_downloader
+```
 
-🧠 Recursos Internos Avançados - Multi-thread para imagens e downloads
-fragmentados. - Detecção automática de FFmpeg. - Log rotativo. -
-Atualização automática do yt-dlp. - Modo compacto. - Salvamento
-automático do diretório padrão.
+Cole um link, escolha Vídeo ou Áudio, formato, qualidade e pasta e clique em
+**Adicionar à fila**. Se o link contiver uma playlist, marque **Playlist completa**
+para baixar todos os itens. Um link que aponta somente para uma playlist seleciona
+essa opção automaticamente.
 
-------------------------------------------------------------------------
+## Histórico e atualização
 
-📁 Estrutura do Projeto - Carriola_Downloader_build_6.1.py -
-carriola_config.ini - carriola_downloader.log - Pasta cache/
+Os dados desta versão ficam em `%LOCALAPPDATA%\CarriolaDownloaderDev` no Windows.
+Ao limpar o histórico, os vídeos e áudios salvos permanecem no computador.
+Downloads interrompidos reaparecem na próxima abertura para repetição manual.
 
-------------------------------------------------------------------------
+Em Preferências, **Consultar versão publicada** abre, mediante escolha do usuário,
+a página da release. O aplicativo não substitui executáveis automaticamente.
+Para atualizar o motor desta versão em código-fonte, feche o aplicativo e execute:
 
-🛠️ Tecnologias Utilizadas - Python 3.8+ - CustomTkinter - yt-dlp -
-FFmpeg - PIL (Pillow) - Requests - Plyer
+```powershell
+.venv\Scripts\python.exe -m pip install -U "yt-dlp[default]"
+```
 
-------------------------------------------------------------------------
+Conteúdo privado/restrito pode exigir autenticação não implementada nesta base.
+O formato MP4 pode usar codecs modernos como AV1/VP9 conforme a fonte; a qualidade
+selecionada é um limite, não uma conversão para uma resolução maior.
 
-📦 Como Instalar 1. Instale dependências: pip install customtkinter
-pillow yt-dlp requests plyer
+## Desenvolvimento
 
-2.  Instale o FFmpeg e deixe acessível no PATH.
-
-3.  Execute: python Carriola_Downloader_build_6.1.py
-
-------------------------------------------------------------------------
-
-🔄 Atualização Automática do yt-dlp O app possui um botão que executa:
-pip install -U yt-dlp
-
-------------------------------------------------------------------------
-
-📚 FAQ - Vídeos privados ou pagos não podem ser baixados. - Shorts,
-Reels e vídeos do X são suportados. - Playlists grandes são suportadas.
-
-------------------------------------------------------------------------
-
-🧩 Futuras Implementações - Tema claro - Mais plataformas - Preferências
-avançadas - Conversão interna entre formatos
-
-------------------------------------------------------------------------
-
-🤝 Contribuições Pull requests e issues são bem-vindos!
-
-------------------------------------------------------------------------
-
-📜 Licença MIT License.
-
-------------------------------------------------------------------------
-
-❤️ Agradecimentos - yt-dlp - FFmpeg - CustomTkinter
+Consulte [testes, arquitetura e empacotamento Windows](docs/DEVELOPMENT.md).
+Esta branch não publica um novo instalador nem modifica o `update.xml` da versão 15.2.
